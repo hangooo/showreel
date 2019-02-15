@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>包敏霞-个人简历-前端</title>
+	<link rel="stylesheet" href="">
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	html,body{
+		width: 100%;
+		height: 100%;
+	}
+	body{
+		background-image: url("timg.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	#bg{
+		height: 100%;
+		background-image: url("overlay-pattern.png"),url("overlay.svg");
+		background-position: top left,center center;
+		background-size: auto,cover;
+		opacity: 0.9;
+	}
+	#wrapper{
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	.title{
+		position: absolute;
+		text-align: center;
+		vertical-align: middle;
+		width: 1000px;
+		margin-left: -500px;
+		left: 50%;
+		top:150px;
+	}
+	.title h1{
+		font-size: 4.35em;
+	    font-weight: 900;
+	    letter-spacing: -.035em;
+	    line-height: 1em;
+	    color: #FFE4CA;
+	}
+	.title p{
+		font-size: 1.25em;
+	    margin: .75em 0.25em;
+	    opacity: .75;
+	    color: #3C3C3C;
+	}
+	.title ul li{
+		list-style: none;
+	}
+	.title ul li a{
+		text-decoration: none;
+	}
+	.title ul li img{
+		width: 60px;
+		height: 60px;
+	}
+	.div1{
+		position: absolute;
+		top: 450px;
+		left:50%;
+		margin-left: -140px;
+		margin-top: -90px;
+		height: 200px;
+		width: 200px;
+	}
+	.circle1,
+	.circle2,
+	.circle3,
+	.circle4,
+	.circle5{
+		position: absolute;
+		width: 70px;
+		height: 70px;
+		border: 5px solid black;
+		border-radius: 50%;
+	}
+	.circle1{
+		border-color: red;
+		left: 0;
+		top: 0;
+	}
+	.circle2{
+		border-color: green;
+		left: 100px;
+		top: 0;
+	}
+	.circle3{
+		border-color: yellow;
+		left: 200px;
+		top: 0;
+	}
+	.circle4{
+		border-color: blue;
+		left: 50px;
+		top: 40px;
+	}
+	.circle5{
+		border-color: purple;
+		left: 150px;
+		top: 40px;
+	}
+</style>
+<body>
+	<div id="bg">
+		<div id="wrapper">
+			<div class="title">
+				<h1>包敏霞</h1>
+				<p>遇见最好的自己</p>
+				<ul>
+					<li><a href="aboutme.html"><img src="aboutme.png" title="关于我"></a></li>
+				</ul>
+			</div>
+			<div class="div1">
+				<div class="circle1"></div>
+				<div class="circle2"></div>
+				<div class="circle3"></div>
+				<div class="circle4"></div>
+				<div class="circle5"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

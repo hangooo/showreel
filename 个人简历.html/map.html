@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="container" style="width:500px; height:500px"></div>
+	<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=3f187497ed50e2c2b19d30ea9ad982ad">
+	</script>
+	<script>
+		var map = new AMap.Map('container',{
+        	zoom: 10,
+        	center: [120.130203,30.259324]
+    	});
+    	var marker;
+    	addMarker();
+    	//在地图上添加图片标记函数
+	    function addMarker(){
+	        marker=new AMap.Marker({
+	            icon:new AMap.Icon({    //复杂图标
+	                size:new AMap.Size(125,125),//图标大小
+	                imageOffset:new AMap.Pixel(0,0)//相对于大图的取图位置
+	            }),
+	            position:new AMap.LngLat(120.130203,30.259324)
+	        });
+	        marker.setMap(map);  //在地图上添加点
+	    }
+	</script>
+</body>
+</html>
+
