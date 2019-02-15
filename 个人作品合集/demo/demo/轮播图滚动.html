@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="jquery.js"></script>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	div{
+		width: 600px;
+		height: 160px;
+		border: 1px solid #ccc;
+		margin: 100px auto;
+		overflow: hidden;
+	}
+	ul{
+		list-style: none;
+		width: 1800px;
+		height: 160px;
+		background: #000;
+	}
+	ul img{
+		width: 300px;
+		height: 160px;
+	}
+	ul li{
+		float: left;
+	}
+</style>
+<script>
+	$(function(){
+		var offset = 0;  //定义变量保存偏移位
+		var timer;
+		function play(){
+			timer = setInterval(function(){  //让图片滚动起来
+				offset += -10;  //往左移
+				if(offset <= -1200){
+					offset = 0;
+				}
+				$("ul").css("marginLeft",offset);
+			},100);
+		}
+		play();
+		$("li").hover(function() {
+			clearInterval(timer);
+			$(this).siblings().fadeTo(100, 0.5); 
+			//给非当前选中的图片添加阴影
+			$(this).fadeTo(100,1); //除去当前选中的图片阴影
+		}, function() {
+			play();
+			$("li").fadeTo(100,1);  //除去所有图片的阴影
+		});
+	});
+</script>
+<body>
+	<div>
+		<ul>
+			<li><img src="dog1.png" alt=""></li>
+			<li><img src="dog2.png" alt=""></li>
+			<li><img src="dog3.png" alt=""></li>
+			<li><img src="dog4.png" alt=""></li>
+			<li><img src="dog1.png" alt=""></li>
+			<li><img src="dog2.png" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

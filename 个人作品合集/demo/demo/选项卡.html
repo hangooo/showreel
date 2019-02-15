@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="jQuery.js"></script>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.box{
+		width: 400px;
+		height: 300px;
+		border: 1px solid black;
+		margin: 50px auto;
+	}
+	.nav li{
+		list-style: none;
+		width: 100px;
+		height: 50px;
+		background: orange;
+		text-align: center;  /*水平居中*/
+		line-height: 50px;   /*垂直居中*/
+		float: left;
+	}
+	.nav .current{
+		background: #ccc;
+	}
+	.box .content img{
+		width: 400px;
+		height: 250px;
+	}
+	.box .content li{
+		list-style: none;
+		display: none;
+	}
+	.box .content .show{
+		display: block;
+	}
+</style>
+<script>
+	$(function(){
+		/*
+		$(".nav li").mouseenter(function() {
+			$(this).addClass("current");
+			var index = $(this).index();  //获取当前选项卡的索引
+			var $li = $(".content li").eq(index); //根据索引找到对应的图片
+			$li.addClass("show"); //显示找到的图片
+		});
+		$(".nav li").mouseleave(function() {
+			$(this).removeClass("current");
+			var index = $(this).index();  
+			var $li = $(".content li").eq(index); 
+			$li.removeClass("show"); //隐藏找到的图片
+		});
+		*/
+		$(".nav li").mouseenter(function(){
+			$(this).addClass("current");
+			$(this).siblings().removeClass("current");
+			var index = $(this).index();  //获取当前选项卡的索引
+			var $li = $(".content li").eq(index);  //根据索引找到对应的图片
+			$li.siblings().removeClass("show"); //隐藏非当前的其他图片
+			$li.addClass("show");  // 显示对应的图片
+		});
+	});
+</script>
+<body>
+	<div class="box">
+		<ul class="nav">
+			<li class="current">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul class="content">
+			<li class="show"><img src="1.gif" alt=""></li>
+			<li><img src="3.gif" alt=""></li>
+			<li><img src="6.gif" alt=""></li>
+			<li><img src="9.gif" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

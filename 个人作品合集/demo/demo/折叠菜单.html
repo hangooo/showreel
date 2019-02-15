@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.nav{
+		list-style: none;
+		width: 300px;
+		margin: 100px auto;
+	}
+	.nav li{
+		border:1px solid #000;
+		line-height: 35px;
+		border-bottom: none;
+		text-indent: 2em;  /*li里文字间隔*/
+		position: relative;
+	}
+	.nav #li1{
+		border-bottom: 1px solid #000;
+	}
+	.nav li span{
+		background: url("righticon.png") no-repeat center center;
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		position: absolute;
+		right: 10px;
+		top: 8px;
+	}
+	.sub li{
+		list-style: none;
+		background: #abcdef;
+		border:none;
+		border-bottom: 1px solid white;
+	}
+	.sub li:hover{
+		background: red;
+	}
+	.sub{
+		display: none;
+	}
+	.nav .content span{
+		transform: rotate(90deg);
+	}
+</style>
+<script src="jquery.js"></script>
+<script>
+	$(function(){
+		$(".nav li").click(function(){
+			var $sub = $(this).children(".sub");  //拿到二级菜单
+			$sub.slideDown(1000); // 让二级菜单一秒钟展开
+			var otherSub = $(this).siblings().children(".sub"); 
+			//拿到所有非当前二级菜单
+			otherSub.slideUp(1000);
+			$(this).addClass("content"); //让所有被点击的一级菜单箭头旋转
+			$(this).siblings().removeClass("content");
+		});
+	});
+</script>
+<body>
+	<ul class="nav">
+		<li class="content">一级菜单<span></span>
+			<ul class="sub">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="sub">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="sub">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="sub">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="sub">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="sub">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单<span></span>
+			<ul class="sub">
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li id="li1">一级菜单<span></span></li>
+	</ul>
+</body>
+</html>

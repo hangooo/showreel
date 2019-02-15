@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<style>
+	ul img{border: none;vertical-align: top; width: 470px; height: 180px;}
+	.box{width: 470px;height: 180px;position: relative; margin: 30px auto; overflow: hidden;}
+	ul{width: 470px;position: absolute;left: 0;top: 0; z-index: 1;}
+	ul li{width: 470px;display: none;}
+	ol{z-index: 2; width: 120px;position: absolute;right: 10px;bottom: 5px;}
+	ol li{width: 20px;height: 20px; float: left; margin: 0 2px; display: inline;background: #fff;color: #f60;line-height: 20px;text-align: center;}
+	ol .active{background: #f60;color: #fff;}
+
+</style>
+<body>
+	<div class="box">
+		<ul>
+			<li style="display: block;"><img src="1.jpg" alt=""></li>
+			<li><img src="2.jpg" alt=""></li>
+			<li><img src="3.jpg" alt=""></li>
+			<li><img src="4.jpg" alt=""></li>
+			<li><img src="5.jpg" alt=""></li>
+		</ul>
+		<ol>
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+	</div>
+</body>
+<script>
+	var ul = document.getElementsByTagName("ul")[0];
+	var aLi = ul.getElementsByTagName("li");
+	var ol = document.getElementsByTagName("ol")[0];
+	var bLi = ol.getElementsByTagName("li");
+
+	for(var i = 0; i < bLi.length; i ++){
+		bLi[i].index = i;
+		bLi[i].onmouseover = function(){
+			for(var i = 0; i < bLi.length; i ++){
+				bLi[i].className = "";
+				aLi[i].style.display = "none";
+			}
+			this.className = "active";
+			aLi[this.index].style.display = "block";
+		};
+	}
+</script>
+</html>

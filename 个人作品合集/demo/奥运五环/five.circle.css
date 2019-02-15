@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.div1{
+	position: absolute;
+	top: 50%;
+	left:50%;
+	margin-left: -190px;
+	margin-top: -90px;
+	height: 180px;
+	width: 380px;
+}
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border: 10px solid black;
+	border-radius: 50%;
+}
+.circle1{
+	border-color: red;
+	left: 0;
+	top: 0;
+}
+.circle2{
+	border-color: green;
+	left: 130px;
+	top: 0;
+}
+.circle3{
+	border-color: yellow;
+	left: 260px;
+	top: 0;
+}
+.circle4{
+	border-color: blue;
+	left: 65px;
+	top: 60px;
+}
+.circle5{
+	border-color: purple;
+	left: 190px;
+	top: 60px;
+}

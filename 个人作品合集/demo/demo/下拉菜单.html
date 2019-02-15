@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.nav{
+		list-style: none;
+		width: 300px;
+		height: 50px;
+		background: red;
+		margin: 100px auto;
+	}
+	.nav li{
+		width: 100px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		float: left;
+	}
+	.sub{
+		list-style: none;
+		background: #abcdef;
+		display: none;
+	}
+</style>
+<script src="jquery.js"></script>
+<script>
+	$(function(){
+		$(".nav li").mouseenter(function(){
+			var $sub = $(this).children(".sub"); //找到二级菜单
+			$sub.stop(); //开始动画前先停止，可解决菜单栏快速移入移出bug
+			$sub.slideDown(1000);
+		});
+		$(".nav li").mouseleave(function(){
+			var $sub = $(this).children(".sub"); //找到二级菜单
+			$sub.stop();
+			$sub.slideUp(1000);
+		});
+	});
+</script>
+<body>
+	<ul class="nav">
+		<li>冷菜
+			<ul class="sub">
+				<li>夫妻肺片</li>
+				<li>皮蛋豆腐</li>
+				<li>花生黄瓜</li>
+			</ul>
+		</li>
+		<li>热菜
+			<ul class="sub">
+				<li>糖醋里脊</li>
+				<li>辣椒炒肉</li>
+				<li>鱼头粉丝</li>
+			</ul>
+		</li>
+		<li>酒水
+			<ul class="sub">
+				<li>可乐</li>
+				<li>雪碧</li>
+				<li>椰汁</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>
