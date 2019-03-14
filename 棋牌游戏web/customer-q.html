@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>棋牌游戏平台-客服中心</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/customer.css">
+    </head>
+    <body>
+        <!--头部开始-->
+        <div class="main">
+            <div class="top">
+                <div class="left"><img src="image/logo.gif"></div>
+                <div class="right mtop13 lan">
+                    <ul>
+                        <li class="top1"><a id="lnkuchomePage" href="javascript:void(0);" onclick="setHomepage()" class="ll">设为首页</a></li>
+                        <li class="top2"><a href="webmap.html" class="ll">网站地图</a></li>
+                        <li class="top3"><a href="javascript:void(0);" onclick="addFavorites()" class="ll">加入收藏</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="navLeft"></div>
+                <div class="navCenter">
+                <ul>
+                    <li class=""><a href="index.html" hidefocus="true">首页</a></li>
+                    <li class=""><a href="news.html" hidefocus="true">新闻公告</a></li>
+                    <li class=""><a href="member.html" hidefocus="true">会员中心</a></li>
+                    <li class=""><a href="pay.html" hidefocus="true">充值中心</a></li>
+                    <li class=""><a href="competition.html" hidefocus="true">比赛中心</a></li>
+                    <li class=""><a href="gameshop.html" hidefocus="true">游戏商场</a></li>
+                    <li class=""><a href="generalize.html" hidefocus="true">推广系统</a></li>
+                    <li class=""><a href="customer.html" hidefocus="true">客服中心</a></li>
+                </ul>	
+                </div>
+                <div class="navRight"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!--头部结束-->
+    
+        <!--页面主体开始-->
+        <div class="main">
+            <div class="customerBody">
+                <div class="customerTitle"></div>
+                <div class="customerBg">
+                    <div class="cLeft">
+                        <div class="cLeftTop"></div>
+                        <div>
+                            <a href="customer.html" class="xsbz" hidefocus="true"></a>
+                        </div>
+                        <div>
+                            <a href="customer-q1.html" class="cjwt" hidefocus="true"></a>
+                        </div>
+                        <div class="wtfk"></div>
+                        <div>
+                            <a href="customer-tel.html" class="kfdh" hidefocus="true"></a>
+                        </div>
+                        <div class="cLeftBottom"></div>
+                        <div class="clear"></div>
+                    </div>			
+                    <div class="cRight">				
+                        <br />
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr align="center">
+                                <td class="line">提交者</td>
+                                <td class="line">留言主题</td>
+                                <td class="line">提交时间</td>
+                                <td class="line">回复</td>
+                                <td class="line">人气</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mtop13" style="text-align: right; width: 70%;float:right; padding-right:40px;">
+                        <div id="anpPage">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="bottom" nowrap="true" style="width:40%;">总记录：0　页码：1/1　每页：10</td>
+                                    <td valign="bottom" nowrap="true" style="width:60%;">
+                                        <a disabled="disabled" style="margin-right:5px;">首页</a>
+                                        <a disabled="disabled" style="margin-right:5px;">上页</a>
+                                        <span style="margin-right:5px;font-weight:Bold;color:red;">1</span>
+                                        <a disabled="disabled" style="margin-right:5px;">下页</a>
+                                        <a disabled="disabled" style="margin-right:5px;">末页</a>&nbsp;&nbsp;
+                                        <input type="text" value="1" disabled="disabled" name="anpPage_input" id="anpPage_input" onkeydown="ANP_keydown(event,'anpPage_btn');" style="width:30px;" />
+                                        <input type="submit" value="go" name="anpPage" id="anpPage_btn" disabled="disabled" onclick="if(ANP_checkInput('anpPage_input',1)){__doPostBack('anpPage','')} else{return false}" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="cRight">
+                        <br />
+                        <div style="display: none;" id="tblFeed">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#C4CFD5" class="padding15">
+                                <tr>
+                                    <td width="27%" align="right" bgcolor="#FFFFFF">留言者：</td>
+                                    <td width="73%" bgcolor="#FFFFFF" id="lblUser"></td>
+                                </tr>
+                                <tr>
+                                    <td align="right" bgcolor="#FFFFFF">留言内容：</td>
+                                    <td bgcolor="#FFFFFF" id="lblContent" style="word-wrap: break-word; width: 500px;"></td>
+                                </tr>
+                                <tr id="trMessage">
+                                    <td align="right" bgcolor="#F7F9FD" class="">管理员回复：</td>
+                                    <td bgcolor="#F7F9FD" id="lblMessage" style="word-wrap: break-word; width: 500px;"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#eef2f9" class="mtop13">
+                            <tr class="height">
+                                <td width="23%" height="65" align="right">用户名：</td>
+                                <td width="77%">
+                                    <input name="txtAccounts" type="text" id="txtAccounts" class="width206" />&nbsp; <font class="hui6">用户名为空则为匿名用户</font>
+                                </td>
+                            </tr>
+                            <tr style="padding-bottom: 15px;">
+                                <td align="right">主题：</td>
+                                <td>
+                                    <input name="txtTitle" type="text" id="txtTitle" style="width:400px;" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">内容：</td>
+                                <td>
+                                    <textarea name="txtContent" rows="2" cols="20" id="txtContent" style="height:150px;width:400px;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="height">
+                                    &nbsp;
+                                </td>
+                                <td>
+                                    <input type="submit" name="btnPublish" value="发表留言" onclick="return checkInput();" id="btnPublish" class="btn1" />
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="customerBottom"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--页面主体结束-->
+
+        <!-- 底部开始 -->
+        <div class="copyrightBg">
+            <div class="main">
+                <ul>
+                    <li>
+                        <span>
+                            <a href="customer.html" target="_blank" class="lh">新手帮助</a> | 
+                            <a href="pay.html" class="lh">充值中心</a> | 
+                            <a href="customer-tel.html" target="_blank" class="lh">联系我们</a> |
+                            <a href="webmap.html" target="_blank" class="lh">网站地图</a>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <div style="line-height:21px">
+                                资源提供：<a href="http://www.souho.net/forum.php" target="_blank"><font color="red">搜虎精品社区</font></a>
+                                <br>&nbsp;
+                                <a href="http://www.souho.net/forum.php" target="_blank">搜虎精品社区</a> | 
+                                <a href="http://vip.souho.cc/" target="_blank">极品商业源码</a> | 
+                                <a href="http://idc.souho.cc/" target="_blank">搜虎精品社区空间、域名</a> | 
+                                <a href="http://vip.souho.cc/templates/Korea/" target="_blank">90G韩国豪华商业模版</a> | 
+                                <a href="http://tool.souho.cc/" target="_blank">站长工具箱</a>
+                                <br>
+                                更多精品商业资源，就在<a href="http://www.souho.net/forum.php" target="_blank">搜虎精品社区</a>
+                            </div>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <img src="image/copyright.gif">
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!--底部结束-->
+    </body>
+</html>
